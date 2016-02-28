@@ -1,0 +1,1833 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{93DEF86C-0588-4B69-A213-F5FE875EF2E3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OSRS_Progress_Tracker</RootNamespace>
+    <AssemblyName>OSRS Progress Tracker</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\TimO\Documents\Testing\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>OSRS_Progress_Tracker.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>93FEE597385313F7B1C2A18C039C3B012FDECD12</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>OSRS Progress Tracker_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Gnome_child_chathead.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FontManaging\FontManager.cs" />
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ContainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ContainView.Designer.cs">
+      <DependentUpon>ContainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditValue.Designer.cs">
+      <DependentUpon>EditValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainSettingForm.Designer.cs">
+      <DependentUpon>MainSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TaskBarMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaskBarMenu.Designer.cs">
+      <DependentUpon>TaskBarMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Highscore Tracking\HighScoreReceiver.cs" />
+    <Compile Include="Highscore Tracking\SaveSettings.cs" />
+    <Compile Include="Highscore Tracking\UserSettings.cs" />
+    <Compile Include="ItemManaging\ItemContainer.cs" />
+    <Compile Include="ItemManaging\ItemContainerSaving.cs" />
+    <Compile Include="ItemManaging\ItemManager.cs" />
+    <Compile Include="ItemManaging\MenuValue.cs" />
+    <Compile Include="ItemManaging\RSItem.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContainView.resx">
+      <DependentUpon>ContainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditValue.resx">
+      <DependentUpon>EditValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainSettingForm.resx">
+      <DependentUpon>MainSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="OSRS Progress Tracker_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Ogre_yeoman_hat.png.webp" />
+    <None Include="Resources\RUNESCAPE-CHAT-FONT-REGULAR.TTF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3rd_age_amulet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3rd_age_bow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3rd_age_cloak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3rd_age_full_helmet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3rd_age_kiteshield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3rd_age_longsword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3rd_age_mage_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3rd_age_platebody.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3rd_age_platelegs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3rd_age_range_coif.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3rd_age_range_legs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3rd_age_range_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3rd_age_robe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3rd_age_robe_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3rd_age_vambraces.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3rd_age_wand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Abyssal_bludgeon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Abyssal_dagger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Abyssal_tentacle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Abyssal_whip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\achievement-diary-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agility-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ahrim%27s_hood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ahrim%27s_robeskirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ahrim%27s_robetop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ahrim%27s_staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Amulet_of_fury.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Amulet_of_fury_%28or%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Archers_ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ardougne_cloak_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ardougne_cloak_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ardougne_cloak_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ardougne_cloak_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arma_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Armadyl_chainskirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Armadyl_chestplate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Armadyl_crossbow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\armadyl_godsword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Armadyl_helmet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attack-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ava_cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bandos_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bandos_chestplate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bandos_godsword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bandos_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bandos_tassets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Berserker_ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book_of_balance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book_of_darkness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book_of_law.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book_of_war.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bucket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\construct-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cooking-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crafting-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dark_bow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dark_infinity_bottoms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dark_infinity_colour_kit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dark_infinity_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dark_infinity_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_chainbody_%28g%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defence-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Desert_amulet_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Desert_amulet_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Desert_amulet_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Desert_amulet_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_full_helm_%28g%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dharok%27s_greataxe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dharok%27s_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dharok%27s_platebody.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dharok%27s_platelegs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_platelegs_%28g%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_2h_sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_axe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_chainbody.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_chainbody_ornament_kit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_full_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_full_helm_ornament_kit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_med_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_pickaxe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_plate+skirt_ornament_kit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_platelegs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_plateskirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_spear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_sq_shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_sq_shield_ornament_kit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_warhammer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_sq_shield_%28g%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Elite_void_robe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Elite_void_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empty_menus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empty_temp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eternal_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explorer_ring_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explorer_ring_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explorer_ring_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explorer_ring_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Falador_shield_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Falador_shield_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Falador_shield_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Falador_shield_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\farming-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fighter_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fighter_torso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fire_cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firemaking-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fishing-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fletching-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fremennik_sea_boots_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fremennik_sea_boots_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fremennik_sea_boots_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fremennik_sea_boots_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fury_ornament_kit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gilded_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gilded_full_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gilded_kiteshield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gilded_platebody.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gilded_platelegs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gilded_plateskirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gilded_scimitar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guthan%27s_chainskirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guthan%27s_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guthan%27s_platebody.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guthan%27s_warspear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Healer_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\herblore-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hitpoints-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Holy_book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hunter-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Infinity_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ironman_chat_badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jar_of_swamp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kandarin_headgear_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kandarin_headgear_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kandarin_headgear_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kandarin_headgear_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Karamja_gloves_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Karamja_gloves_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Karamja_gloves_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Karamja_gloves_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Karil%27s_coif.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Karil%27s_crossbow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Karil%27s_leatherskirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Karil%27s_leathertop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Light_infinity_bottoms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Light_infinity_colour_kit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Light_infinity_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Light_infinity_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magic-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Magic_fang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Magma_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Max_cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mining-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Morytania_legs_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Morytania_legs_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Morytania_legs_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Morytania_legs_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mud_battlestaff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Occult_necklace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\osrs_bt.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pegasian_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Penance_gloves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Penance_skirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pet_penance_queen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prayer-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prime_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Primordial_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quest-point-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ranging-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ranger_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ranger_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Regen_bracelet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rex_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ring_of_the_gods.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\runecraft-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Runner_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Runner_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sara_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saradomin_cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saradomin_godsword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saradomin_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saradomin_sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seercull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seers_ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Serpentine_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\slayer-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smithing-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Smoke_battlestaff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Staff_of_the_dead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steam_battlestaff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strength-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Supreme_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tanzanite_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thieving-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Torag%27s_hammers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Torag%27s_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Torag%27s_platebody.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Torag%27s_platelegs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Toxic_blowpipe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transparent_placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Treasonous_ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trident.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tyrannical_ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ultimate_ironman_chat_badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unholy_book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Varrock_armour_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Varrock_armour_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Varrock_armour_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Varrock_armour_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Verac%27s_brassard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Verac%27s_flail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Verac%27s_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Verac%27s_plateskirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Void_knight_gloves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Void_knight_mace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Void_knight_robe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Void_knight_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Void_mage_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Void_melee_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Void_ranger_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warrior_ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Western_banner_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Western_banner_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Western_banner_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Western_banner_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wilderness_sword_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wilderness_sword_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wilderness_sword_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wilderness_sword_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woodcut-cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zammy_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zamorak_godsword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zamorakian_spear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zulrah_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spellbook_Swap_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MenuClasses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lumberjack_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lumberjack_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lumberjack_legs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lumberjack_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lumberjack.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skilling_names.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome_child_chathead.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skilling_Farmer.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skilling_Angler.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skilling_Graceful.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skilling_Prospector.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prospector_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prospector_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prospector_legs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prospector_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Graceful_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Graceful_cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Graceful_gloves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Graceful_hood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Graceful_legs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Graceful_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mark_of_grace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Farmer_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Farmer_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Farmer_legs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\farmer_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Angler_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Angler_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Angler_legs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Angler_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Regular_Bosses_names.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bosses_Dagannoth_Kings.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dagannoth_bones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Magic_secateurs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gricoller_can.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seed_box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minigames_names.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minigames_Pest Control.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GodWarsDungeon.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minigames_Castle_Wars.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Castle_wars_ticket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Decorative_magic_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Decorative_magic_robe_legs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Decorative_magic_robe_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Decorative_range_legs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Decorative_range_quiver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Decorative_range_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gold_decorative_body.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gold_decorative_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gold_decorative_legs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gold_decorative_shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gold_decorative_skirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gold_decorative_sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guthix_halo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red_decorative_body.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red_decorative_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red_decorative_legs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red_decorative_shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red_decorative_skirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red_decorative_sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saradomin_halo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White_decorative_body.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White_decorative_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White_decorative_legs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White_decorative_shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White_decorative_skirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White_decorative_sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zamorak_halo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minigames_Barbarian_Assault.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Regular_Bosses_Zulrah.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zulrah_scales.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minigames_Barrows.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minigames_Mage_Training_Arena.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bones_to_peaches.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Infinity_bottoms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Infinity_gloves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Infinity_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Infinity_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mage_book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Master_wand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Regular_Bosses_Corporeal_Beast.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arcane_sigil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Elysian_sigil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Holy_elixir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pet_dark_core.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spectral_sigil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spirit_shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Regular_Bosses_King_Black_Dragon.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Draconic_visage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kbd_heads.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kbd_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Regular_Bosses_Kalphite_Queen.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jar_of_sand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kq_head.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kq_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Regular_Bosses_Giant_Mole.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mole_claw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mole_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mole_skin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wilderness_Bosses_names.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wilderness_Bosses_Callisto.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Callisto_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slayer_Bosses_names.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slayer_Bosses_Abyssal_Sire.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Abyssal_head.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bludgeon_axon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bludgeon_claw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bludgeon_spine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jar_of_miasma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sire_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slayer_Bosses_Thermonuclear_smoke_devil.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pet_smoke_devil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slayer_Bosses_Kraken.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slayer_Bosses_Cerberus.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cerberus_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eternal_crystal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jar_of_souls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Key_master_teleport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pegasian_crystal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Primordial_crystal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Smouldering_stone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kraken_tentacle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pet_kraken.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trident_of_the_seas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jar_of_dirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capes_names.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capes_Skillcapes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capes_Non-skill_Capes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capes_Max_Capes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fire_max_cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guthix_max_cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saradomin_max_cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zamorak_max_cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ava_max_cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Quest_point_cape_trim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dragon_archer_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chompy_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Overseer_book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skilling_pets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fishing_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hunter_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mining_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Woodcutting_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pets_names.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pets_Skilling_pets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pets_Regular_boss_pets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pets_Slayer_boss_pets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pets_Wilderness_boss_pets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pet_chaos_elemental.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scorpia_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Venenatis_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vetion_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pets_Other_pets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fish_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jad_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pet_cat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pet_rock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Toy_cat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hell_cat_pet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wilderness_Bosses_Vetion.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wilderness_Bosses_Venenatis.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wilderness_Bosses_Crazy_archaeologist.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Malediction_shard_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Odium_shard_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fedora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wilderness_Bosses_Chaos_Fanatic.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wilderness_Bosses_Chaos_Elemental.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wilderness_Bosses_Scorpia.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Malediction_shard_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Odium_shard_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Odium_shard_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Malediction_shard_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Treasure_Trials_names.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Treasure_Trials_Clue_Counter.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\easy_clue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elite_clue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hard_clue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medium_clue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\total_clue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Treasure_Trials_God_Pages.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zamorak_page_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zamorak_page_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zamorak_page_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zamorak_page_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saradomin_page_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saradomin_page_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saradomin_page_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saradomin_page_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guthix_page_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guthix_page_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guthix_page_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guthix_page_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Armadyl_page_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Armadyl_page_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Armadyl_page_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Armadyl_page_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bandos_page_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bandos_page_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bandos_page_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bandos_page_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ancient_page_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ancient_page_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ancient_page_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ancient_page_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Treasure_Trials_Easy_clue_rewards.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Treasure_Trials_Easy_clue_rewards_1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Achievement_diaries_names.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Achievement_diaries_Easy_Diaries.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Achievement_diaries_Medium_Diaries.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Achievement_diaries_Hard_Diaries.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Achievement_diaries_Elite_Diaries.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Treasure_Trials_Hard_Clue_Emote_Items.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adamant_2h_sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adamant_sq_shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Amulet_of_glory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Amulet_of_power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ancient_crozier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ancient_mitre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ancient_stole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue_dhide_body.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue_dhide_chaps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue_dhide_vamb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue_mystic_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bone_spear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diamond_bracelet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diamond_ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Elemental_shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fire_battlestaff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Heraldic_rune_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Heraldic_rune_kiteshield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iron_platebody.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mithril_platelegs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mystic_fire_staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red_headband.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ring_of_life.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rune_axe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rune_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rune_full_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rune_platebody.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rune_platelegs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rune_spear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rune_warhammer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Treasure_Trials_Elite_Clue_Emote_Items.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black_salamander.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Combat_bracelet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Granite_shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Helm_of_neitiznot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lava_battlestaff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red_dhide_chaps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rolling_pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rune_longsword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Splitbark_body.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Splitbark_legs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spotted_cape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barrows_gloves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black_dhide_chaps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black_dhide_vamb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skull_%28status%29_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Miscellaneous_names.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Miscellaneous_Champion_Scrolls.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Earth_Warrior_champion_scroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ghoul_champion_scroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Goblin_champion_scroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hill_Giant_champion_scroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hobgoblin_champion_scroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imp_champion_scroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jogre_champion_scroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lesser_Demon_champion_scroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skeleton_champion_scroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zombie_champion_scroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Miscellaneous_Chompy_Hats.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bowman_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bowmaster_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expert_dragon_archer_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expert_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expert_ogre_dragon_archer_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forester_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Marksman_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ogre_bowman_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ogre_bowmaster_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ogre_dragon_archer_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ogre_expert_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ogre_forester_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ogre_marksman_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ogre_woodsman_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ogre_yeoman_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Woodsman_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yeoman_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Miscellaneous_Jar_Drops.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Miscellaneous_Slayer_Rewards.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aviansie_unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Broader_fletching.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Desert_lizard_finishing_blow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gargoyle_finishing_blow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Like_a_boss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mithril_dragon_unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mutated_zygomite_finishing_blow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rockslug_finishing_blow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slayer_helmet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slayer_ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tzhaar_unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Herb_sack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Gnome_child_chathead.ico" />
+    <None Include="Resources\Kurask_head.png" />
+    <None Include="Resources\Crawling_hand.png" />
+    <None Include="Resources\Cockatrice_head.png" />
+    <None Include="Resources\Basilisk_head.png" />
+    <None Include="Resources\Miscellaneous_Head_Drops.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,19 @@
+C:\Users\TimO\Documents\Visual Studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\bin\Debug\OSRS Progress Tracker.exe
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\bin\Debug\Newtonsoft.Json.dll
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\bin\Debug\OSRS Progress Tracker.exe.config
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\obj\Debug\OSRS_Progress_Tracker.Forms.ContainView.resources
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\obj\Debug\OSRS_Progress_Tracker.Forms.EditValue.resources
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\obj\Debug\OSRS_Progress_Tracker.Forms.MainMenu.resources
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\obj\Debug\OSRS_Progress_Tracker.Properties.Resources.resources
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\obj\Debug\OSRS Progress Tracker.csproj.GenerateResource.Cache
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\obj\Debug\OSRS Progress Tracker.exe
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\obj\Debug\OSRS Progress Tracker.pdb
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\bin\Debug\OSRS Progress Tracker.pdb
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\obj\Debug\OSRS_Progress_Tracker.Forms.MainSettingForm.resources
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\obj\Debug\OSRS_Progress_Tracker.Forms.AboutForm.resources
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\bin\Debug\OSRS Progress Tracker.exe.manifest
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\bin\Debug\OSRS Progress Tracker.application
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\obj\Debug\OSRS Progress Tracker.TrustInfo.xml
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\obj\Debug\OSRS Progress Tracker.exe.manifest
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\obj\Debug\OSRS Progress Tracker.application
+C:\Users\TimO\documents\visual studio 2013\Projects\OSRS Progress Tracker\OSRS Progress Tracker\obj\Debug\OSRS Progress Tracker.csprojResolveAssemblyReference.cache
